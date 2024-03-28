@@ -1,6 +1,6 @@
 ---
 Author: Chirag Singh
-Title: "BRL-CAD: Scripts for generating simple animations (e.g. appear / disappear, bounce, appear left to right, fade in from above, etc)"
+Title: "BRL-CAD: Scripts to generate light simulation input files from 3D models"
 Subject: GSoC 2024 Proposal
 ---
 
