@@ -1,0 +1,26 @@
+# Specify where the compiled octree should be generated
+OCTREE=scene.oct
+# Specify an (I)nterior or (E)xterior scene, along with the bounding box of the scene, obtainable via `getbbox scene.rad`
+ZONE=E -3.0 15.0 -10.0 13.0 -1.0 3.559999942779541
+# A list of of the rad files which make up our scene
+scene=scene.rad
+# Camera view options
+view=-vp -12.90385913848877 17.390127182006836 8.096625328063965 -vd 0.7690425515174866 -0.5973925590515137 -0.2273673117160797 -vu 0.17288120090961456 -0.14805391430854797 0.9737516641616821
+# Option overrides to specify when rendering
+render=-av 1 1 1 -pa 1.7777777777777777
+# Choose how indirect the lighting is
+INDIRECT=2
+# Choose the quality of the image, from LOW, MEDIUM, or HIGH
+QUALITY=MEDIUM
+# Choose the resolution of mesh detail, from LOW, MEDIUM, or HIGH
+DETAIL=MEDIUM
+# Choose the light value variance variability, from LOW, MEDIUM, or HIGH
+VARIABILITY=MEDIUM
+# Reolution of the image
+RESOLUTION=1920 1080
+# Where to output the raw render
+RAWFILE=output_raw
+# Where to output a filtered version of the render (scaled down for antialiasing, exposure correction, etc)
+PICTURE=output
+# The time duration in minutes before reporting a status update of the render progress
+REPORT=0.1

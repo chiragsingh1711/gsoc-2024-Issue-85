@@ -1,0 +1,62 @@
+A cube from Blender is exported as OBJ with a material named as "White"
+
+
+
+Create a materials.rad which contains the material and and its values
+void plastic White
+0
+0
+5 1 1 1 0 0
+
+
+To create a mesh file from an obj file, use obj2mesh
+
+obj2mesh -a materials.rad cube.obj cube.rtm
+
+
+Now create a scene.rad and place the mesh file in it
+
+void mesh model
+1 cube.rtm
+0
+0
+
+
+Now create a octree file from the scene.rad file
+This scene.oct will then be sent for final rendering
+
+
+oconv scene.rad > scene.oct
+
+
+Adding Camera
+Go to blender and get the camera details
+
+import bpy
+from mathutils import Vector
+
+cam = bpy.data.objects['Camera']
+location = cam.location
+up = cam.matrix_world.to_quaternion() @ Vector((0.0, 1.0, 0.0))
+direction = cam.matrix_world.to_quaternion() @ Vector((0.0, 0.0, -1.0))
+
+print(
+    '-vp ' + str(location.x) + ' ' + str(location.y) + ' ' +  str(location.z) + ' ' +
+    '-vd ' + str(direction.x) + ' ' + str(direction.y) + ' ' + str(direction.z) + ' ' +
+    '-vu ' + str(up.x) + ' ' + str(up.y) + ' ' + str(up.z)
+)
+
+-vp 7.358891487121582 -6.925790786743164 4.958309173583984 -vd -0.6515582203865051 0.6141704320907593 -0.44527149200439453 -vu -0.32401347160339355 0.3054208755493164 0.8953956365585327
+
+vp is the view position
+vd is the view direction
+vu is the view up
+
+Once you know your coordinates and vectors for vp, vd, and vu, 
+let's use the rpict Radiance program to render from that angle.
+
+rpict -vp 7.358891487121582 -6.925790786743164 4.958309173583984 -vd -0.6515582203865051 0.6141704320907593 -0.44527149200439453 -vu -0.32401347160339355 0.3054208755493164 0.8953956365585327 -av 1 1 1 -ab 5 scene.oct > render.pic
+
+
+av is world ambient RGB
+ab is ambient bounces

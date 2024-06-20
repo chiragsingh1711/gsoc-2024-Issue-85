@@ -1,0 +1,76 @@
+{
+  "material_mapping": [
+    {
+      "material": "surface-style-15009-anstrich",
+      "radiance_material": "blue_plastic"
+    },
+    {
+      "material": "DefaultMaterial",
+      "radiance_material": "silver_metal"
+    },
+    {
+      "material": "surface-style-17449-kiefer,-gl--nzend",
+      "radiance_material": "clear_glass"
+    },
+    {
+      "material": "surface-style-20871-farbe,-matt",
+      "radiance_material": "red_plastic"
+    },
+    {
+      "material": "surface-style-17391-kiefer",
+      "radiance_material": "blue_plastic"
+    },
+    {
+      "material": "surface-style-177-gras",
+      "radiance_material": "olive_trans"
+    },
+    {
+      "material": "surface-style-22749-glas",
+      "radiance_material": "clear_glass"
+    },
+    {
+      "material": "surface-style-34488-white1",
+      "radiance_material": "white_light"
+    },
+    {
+      "material": "surface-style-59532-white",
+      "radiance_material": "white_light"
+    },
+    {
+      "material": "surface-style-24453-kupfer",
+      "radiance_material": "silver_metal"
+    },
+    {
+      "material": "IfcSpace",
+      "radiance_material": "white_light"
+    },
+    {
+      "material": "IfcSite",
+      "radiance_material": "olive_trans"
+    },
+    {
+      "material": "surface-style-14521-holz",
+      "radiance_material": "silver_metal"
+    },
+    {
+      "material": "IfcDoor",
+      "radiance_material": "blue_plastic"
+    },
+    {
+      "material": "IfcWindow",
+      "radiance_material": "clear_glass"
+    },
+    {
+      "material": "surface-style-34513-stahlbeton-65690",
+      "radiance_material": "blue_plastic"
+    },
+    {
+      "material": "surface-style-35176-solid",
+      "radiance_material": "red_plastic"
+    },
+    {
+      "material": "surface-style-13127-pen_material12",
+      "radiance_material": "olive_trans"
+    }
+  ]
+}

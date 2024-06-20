@@ -1,0 +1,23 @@
+void plastic white
+0
+0
+5 1 1 1 0 0
+
+inherit alias surface-style-15009-anstrich white
+inherit alias DefaultMaterial white
+inherit alias surface-style-17449-kiefer,-gl--nzend white
+inherit alias surface-style-20871-farbe,-matt white
+inherit alias surface-style-17391-kiefer white
+inherit alias surface-style-177-gras white
+inherit alias surface-style-22749-glas white
+inherit alias surface-style-34488-white1 white
+inherit alias surface-style-59532-white white
+inherit alias surface-style-24453-kupfer white
+inherit alias IfcSpace white
+inherit alias IfcSite white
+inherit alias surface-style-14521-holz white
+inherit alias IfcDoor white
+inherit alias IfcWindow white
+inherit alias surface-style-34513-stahlbeton-65690 white
+inherit alias surface-style-35176-solid white
+inherit alias surface-style-13127-pen_material12 white
