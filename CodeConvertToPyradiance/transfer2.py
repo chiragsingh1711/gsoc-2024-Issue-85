@@ -4,6 +4,11 @@ import pyradiance as pr
 import bpy
 import subprocess
 import mathutils
+import time
+
+from pathlib import Path
+from typing import Union, Optional, Sequence
+
 
 import json
 
@@ -19,6 +24,12 @@ from matplotlib.colors import LogNorm
 from bpy.props import StringProperty
 from bpy.types import Operator, Panel
 from bpy_extras.io_utils import ImportHelper
+
+
+def save_obj2mesh_output(inp: Union[bytes, str, Path], output_file: str, **kwargs):
+        output_bytes = pr.obj2mesh(inp, **kwargs)
+        with open(output_file, 'wb') as f:
+            f.write(output_bytes)
 
 
 class RadianceExporterPanel(bpy.types.Panel):
@@ -72,6 +83,10 @@ class ExportRadiance(bpy.types.Operator):
     #     scene = context.scene
     #     quality = scene.radiance_quality
     #     return quality
+
+    
+
+
 
     def execute(self, context):
         try:
@@ -179,11 +194,13 @@ class ExportRadiance(bpy.types.Operator):
                 self.report({'ERROR'}, f"Error in material processing: {str(e)}")
                 return {'CANCELLED'}
 
+
             try:
                 # Run obj2mesh
                 rtm_file = os.path.join(radiance_dir, "model.rtm")
-                subprocess.run(["obj2mesh", "-a", materials_file, obj_file_path, rtm_file], check=True)
-
+                # subprocess.run(["obj2mesh", "-a", materials_file, obj_file_path, rtm_file], check=True)
+                save_obj2mesh_output(obj_file_path, rtm_file, matfiles=[materials_file])
+                
                 # Create scene.rad file
                 scene_file = os.path.join(radiance_dir, "scene.rad")
                 with open(scene_file, "w") as file:
@@ -191,9 +208,6 @@ class ExportRadiance(bpy.types.Operator):
 
                 self.report({'INFO'}, "Exported Scene file to: {}".format(scene_file))
 
-            except subprocess.CalledProcessError as e:
-                self.report({'ERROR'}, f"Error running obj2mesh: {str(e)}")
-                return {'CANCELLED'}
             except Exception as e:
                 self.report({'ERROR'}, f"Error creating scene file: {str(e)}")
                 return {'CANCELLED'}
