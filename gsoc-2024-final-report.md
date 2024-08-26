@@ -1,8 +1,9 @@
-# Google Summer of Code 2024 Final Report: BlenderBIM Add-on Radiance Exporter
+# Google Summer of Code 2024 Final Report: Radiance Rendering using BlenderBIM Add-on
 
 ## Project Overview
 
 This summer, I had the opportunity to contribute to the BlenderBIM Add-on as part of Google Summer of Code 2024. The project focused on developing a Radiance exporter for the BlenderBIM Add-on, enhancing its capabilities in lighting simulation and analysis for BIM (Building Information Modeling) projects.
+
 
 ![BlenderBIM Add-on Logo](images/Report/Screenshot%202024-08-21%20115103.png)
 
@@ -15,6 +16,8 @@ The main objectives of this project were:
 3. Integrate the exporter with existing IFC (Industry Foundation Classes) data structures
 4. Provide functionality for material mapping and customization
 5. Enable visualization of Radiance simulation results within Blender
+
+6. I have also written a blog on how to use radiacne rendering feature that I have implemented - Blog (https://medium.com/p/0b9a2e748e9f)
 
 ## Accomplishments
 
@@ -112,8 +115,8 @@ Throughout this project, I encountered several challenges and learned valuable l
 
 ## Conclusion
 
-Participating in Google Summer of Code 2024 has been an incredible learning experience. I'm grateful for the opportunity to contribute to the BlenderBIM Add-on and the broader open-source BIM community. I look forward to seeing how this work will be used and expanded upon in the future.
+Participating in Google Summer of Code 2024 has been an incredible learning experience. I'm grateful for the opportunity to contribute to the BlenderBIM Add-on and the broader open-source community. I look forward to seeing how this work will be used and expanded upon in the future.
 
 ## Acknowledgements
 
-I would like to thank my mentor Dion Moult for his guidance and support throughout this project. I also want to express my gratitude to the BlenderBIM community for their feedback and assistance.
+I would like to thank my mentor Dion Moult for his guidance and support throughout this project. I also want to express my gratitude to the OSArch community for their feedback and assistance.
